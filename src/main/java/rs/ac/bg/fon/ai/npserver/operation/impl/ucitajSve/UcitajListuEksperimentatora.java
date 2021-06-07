@@ -1,7 +1,7 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve;
 
 import java.util.List;
-import domain.Eksperimentator;
+import rs.ac.bg.fon.ai.npcommon.domain.Eksperimentator;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 
 public class UcitajListuEksperimentatora extends OpstaSO {

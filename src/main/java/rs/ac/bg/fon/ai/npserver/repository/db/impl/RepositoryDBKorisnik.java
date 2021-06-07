@@ -1,6 +1,9 @@
-package repository.db.impl;
+package rs.ac.bg.fon.ai.npserver.repository.db.impl;
 
-import domain.Korisnik;
+import rs.ac.bg.fon.ai.npcommon.domain.Korisnik;
+import rs.ac.bg.fon.ai.npserver.repository.db.DBConnectionFactory;
+import rs.ac.bg.fon.ai.npserver.repository.db.DBRepository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,8 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import repository.db.DBConnectionFactory;
-import repository.db.DBRepository;
 
 public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
 

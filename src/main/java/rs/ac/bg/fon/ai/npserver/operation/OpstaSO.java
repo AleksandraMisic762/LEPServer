@@ -1,8 +1,8 @@
 package rs.ac.bg.fon.ai.npserver.operation;
 
-import repository.Repository;
-import repository.db.DBRepository;
-import repository.db.impl.RepositoryDBOpsta;
+import rs.ac.bg.fon.ai.npserver.repository.Repository;
+import rs.ac.bg.fon.ai.npserver.repository.db.DBRepository;
+import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBOpsta;
 
 public abstract class OpstaSO {
 

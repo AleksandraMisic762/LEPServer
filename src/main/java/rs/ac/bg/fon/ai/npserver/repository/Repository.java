@@ -1,4 +1,4 @@
-package repository;
+package rs.ac.bg.fon.ai.npserver.repository;
 
 import java.util.List;
 

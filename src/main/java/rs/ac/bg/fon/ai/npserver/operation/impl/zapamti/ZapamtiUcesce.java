@@ -1,6 +1,6 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.zapamti;
 
-import domain.SE;
+import rs.ac.bg.fon.ai.npcommon.domain.SE;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 
 public class ZapamtiUcesce extends OpstaSO {

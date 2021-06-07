@@ -1,6 +1,6 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve;
 
-import domain.Predmet;
+import rs.ac.bg.fon.ai.npcommon.domain.Predmet;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 
 import java.util.List;

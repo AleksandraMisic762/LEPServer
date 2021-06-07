@@ -7,12 +7,11 @@ import rs.ac.bg.fon.ai.npserver.operation.impl.obrisi.*;
 import rs.ac.bg.fon.ai.npserver.operation.impl.pretrazi.*;
 import rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve.*;
 import rs.ac.bg.fon.ai.npserver.operation.impl.zapamti.*;
+import rs.ac.bg.fon.ai.npserver.repository.Repository;
+import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBKorisnik;
 
 import java.util.List;
 import java.util.Map;
-
-import repository.Repository;
-import repository.db.impl.RepositoryDBKorisnik;
 
 public class KontrolerPL {
 

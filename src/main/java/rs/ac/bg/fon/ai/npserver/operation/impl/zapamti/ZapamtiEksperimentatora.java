@@ -1,6 +1,6 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.zapamti;
 
-import domain.Eksperimentator;
+import rs.ac.bg.fon.ai.npcommon.domain.Eksperimentator;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 
 public class ZapamtiEksperimentatora extends OpstaSO {

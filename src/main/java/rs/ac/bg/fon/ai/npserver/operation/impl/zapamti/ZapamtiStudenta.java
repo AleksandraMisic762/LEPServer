@@ -1,6 +1,6 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.zapamti;
 
-import domain.Student;
+import rs.ac.bg.fon.ai.npcommon.domain.Student;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 
 public class ZapamtiStudenta extends OpstaSO {

@@ -1,13 +1,13 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.zapamti;
 
-import domain.Eksperiment;
-import domain.OpstiDomenskiObjekat;
-import domain.RasporedEksperimenata;
+import rs.ac.bg.fon.ai.npcommon.domain.Eksperiment;
+import rs.ac.bg.fon.ai.npcommon.domain.OpstiDomenskiObjekat;
+import rs.ac.bg.fon.ai.npcommon.domain.RasporedEksperimenata;
 import java.util.ArrayList;
 import java.util.List;
 
-import repository.db.impl.RepositoryDBOpsta;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
+import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBOpsta;
 
 public class ZapamtiRasporedEksperimenata  extends OpstaSO {
     

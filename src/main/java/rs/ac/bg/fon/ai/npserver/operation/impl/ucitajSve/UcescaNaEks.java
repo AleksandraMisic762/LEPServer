@@ -1,16 +1,16 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve;
 
-import domain.Eksperiment;
-import domain.ListaStudenata;
-import domain.OpstiDomenskiObjekat;
-import domain.SE;
-import domain.Student;
+import rs.ac.bg.fon.ai.npcommon.domain.Eksperiment;
+import rs.ac.bg.fon.ai.npcommon.domain.ListaStudenata;
+import rs.ac.bg.fon.ai.npcommon.domain.OpstiDomenskiObjekat;
+import rs.ac.bg.fon.ai.npcommon.domain.SE;
+import rs.ac.bg.fon.ai.npcommon.domain.Student;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import repository.db.impl.RepositoryDBOpsta;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
+import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBOpsta;
 
 public class UcescaNaEks extends OpstaSO {
 

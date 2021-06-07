@@ -1,15 +1,15 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.zapamti;
 
-import domain.LSS;
-import domain.ListaStudenata;
-import domain.Student;
+import rs.ac.bg.fon.ai.npcommon.domain.LSS;
+import rs.ac.bg.fon.ai.npcommon.domain.ListaStudenata;
+import rs.ac.bg.fon.ai.npcommon.domain.Student;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import repository.db.impl.RepositoryDBOpsta;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
+import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBOpsta;
 
 public class ZapamtiListuStudenata extends OpstaSO {
 

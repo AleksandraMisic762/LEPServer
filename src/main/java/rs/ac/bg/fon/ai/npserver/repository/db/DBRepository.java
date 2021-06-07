@@ -1,6 +1,6 @@
-package repository.db;
+package rs.ac.bg.fon.ai.npserver.repository.db;
 
-import repository.Repository;
+import rs.ac.bg.fon.ai.npserver.repository.Repository;
 
 public interface DBRepository<T> extends Repository<T>{
     

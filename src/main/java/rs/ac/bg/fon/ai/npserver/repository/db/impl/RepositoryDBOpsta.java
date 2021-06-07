@@ -1,19 +1,20 @@
-package repository.db.impl;
+package rs.ac.bg.fon.ai.npserver.repository.db.impl;
 
-import domain.Eksperiment;
+import rs.ac.bg.fon.ai.npcommon.domain.Eksperiment;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import domain.OpstiDomenskiObjekat;
-import domain.Predmet;
-import domain.SE;
-import domain.Student;
+import rs.ac.bg.fon.ai.npcommon.domain.OpstiDomenskiObjekat;
+import rs.ac.bg.fon.ai.npcommon.domain.Predmet;
+import rs.ac.bg.fon.ai.npcommon.domain.SE;
+import rs.ac.bg.fon.ai.npcommon.domain.Student;
+import rs.ac.bg.fon.ai.npserver.repository.db.DBConnectionFactory;
+import rs.ac.bg.fon.ai.npserver.repository.db.DBRepository;
+
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
-import repository.db.DBConnectionFactory;
-import repository.db.DBRepository;
 
 public class RepositoryDBOpsta implements DBRepository<OpstiDomenskiObjekat> {
 

@@ -1,7 +1,6 @@
-package repository.db.impl;
+package rs.ac.bg.fon.ai.npserver.repository.db.impl;
 
-import domain.*;
-import domain.OpstiDomenskiObjekat;
+import rs.ac.bg.fon.ai.npcommon.domain.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

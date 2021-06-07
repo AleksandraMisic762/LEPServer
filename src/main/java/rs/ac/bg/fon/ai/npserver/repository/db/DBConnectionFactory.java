@@ -1,4 +1,4 @@
-package repository.db;
+package rs.ac.bg.fon.ai.npserver.repository.db;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
