@@ -3,6 +3,9 @@ package rs.ac.bg.fon.ai.npserver.controller;
 import rs.ac.bg.fon.ai.npcommon.domain.*;
 import rs.ac.bg.fon.ai.npserver.operation.OpstaSO;
 import rs.ac.bg.fon.ai.npserver.operation.impl.kreiraj.*;
+import rs.ac.bg.fon.ai.npserver.operation.impl.kreirajIzvestaj.IzvestajOSprovedenimEksperimentima;
+import rs.ac.bg.fon.ai.npserver.operation.impl.kreirajIzvestaj.IzvestajStudentiNaEksperimentu;
+import rs.ac.bg.fon.ai.npserver.operation.impl.kreirajIzvestaj.IzvestajStudentiUslovom;
 import rs.ac.bg.fon.ai.npserver.operation.impl.obrisi.*;
 import rs.ac.bg.fon.ai.npserver.operation.impl.pretrazi.*;
 import rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve.*;
@@ -12,6 +15,9 @@ import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBKorisnik;
 
 import java.util.List;
 import java.util.Map;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 public class KontrolerPL {
 
@@ -236,4 +242,42 @@ public class KontrolerPL {
             return false;
         }
     }
+    
+    //generise Json izvestaj o studentima koji imaju uslov za polaganje ispita
+    public boolean izvestajOStudentimaSaUslovom(Map mapa) {
+    	try {
+            OpstaSO operation = new IzvestajStudentiUslovom();
+            boolean signal = operation.izvrsiOperaciju(mapa);
+            mapa.replace("Studenti", ((IzvestajStudentiUslovom) operation).getStudenti());
+            return signal;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    
+    //generise Json izvestaj o ekpserimentima koji su se vec sproveli u laboratoriji
+    public boolean izvestajOSprovedenimEksperimentima(List<Eksperiment> lista) {
+    	try {
+            OpstaSO operation = new IzvestajOSprovedenimEksperimentima();
+            boolean signal = operation.izvrsiOperaciju(null);
+            lista.addAll(((IzvestajOSprovedenimEksperimentima) operation).getEksperimenti());
+            return signal;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    
+    //generise Json izvestaj o studentima koji su ucestvovali u nekom eksperimentu
+    public boolean izvestajOUcescuNaEksperimentu(Map mapa) {
+    	try {
+            OpstaSO operation = new IzvestajStudentiNaEksperimentu();
+            boolean signal = operation.izvrsiOperaciju(mapa);
+            mapa.replace("Studenti", ((IzvestajStudentiNaEksperimentu) operation).getStudenti());
+            return signal;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    
+    
 }
