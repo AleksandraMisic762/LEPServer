@@ -16,8 +16,6 @@ import rs.ac.bg.fon.ai.npserver.repository.db.impl.RepositoryDBKorisnik;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 public class KontrolerPL {
 
