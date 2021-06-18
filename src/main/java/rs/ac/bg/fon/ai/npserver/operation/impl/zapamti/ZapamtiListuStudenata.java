@@ -30,7 +30,6 @@ public class ZapamtiListuStudenata extends OpstaSO {
         try {
             ((RepositoryDBOpsta) repository).add(listaS);
             for(Student s : studenti){
-                s.setPolozio(true);
                 ((RepositoryDBOpsta) repository).add(new LSS(s, listaS));
                 ((RepositoryDBOpsta) repository).edit(s);
             }
@@ -43,4 +42,5 @@ public class ZapamtiListuStudenata extends OpstaSO {
     public ListaStudenata getListaStudenata() {
         return listaStudenata;
     }
+    
 }
