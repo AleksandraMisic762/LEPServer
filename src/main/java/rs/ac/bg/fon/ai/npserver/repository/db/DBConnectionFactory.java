@@ -23,7 +23,7 @@ public class DBConnectionFactory {
     public Connection getConnection() throws Exception {
         if (connection == null || connection.isClosed()) {
             Properties properties = new Properties();
-            properties.load(new FileInputStream("config/dbconfig.properties"));
+            properties.load(new FileInputStream("src/main/resources/dbconfig.properties"));
             String url = properties.getProperty("url");
             String username = properties.getProperty("username");
             String password = properties.getProperty("password");
