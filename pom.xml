@@ -33,11 +33,11 @@
 			<groupId>rs.ac.bg.fon.ai</groupId>
 			<artifactId>NPCommon</artifactId>
 			<version>1.0-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>C:\Users\HP\8. semestar\Napredno programiranje\Projekat\NPCommon\target\NPCommon-1.0-SNAPSHOT.jar</systemPath>
 		</dependency>
 
 	</dependencies>
+	
+	
 
 
 	<build>
