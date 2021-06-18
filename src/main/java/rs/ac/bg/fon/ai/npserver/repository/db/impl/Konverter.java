@@ -26,9 +26,11 @@ public class Konverter {
 
             return s;
         } else if (entity instanceof Eksperiment) {
-            RasporedEksperimenata raspored = new RasporedEksperimenata(rs.getLong("e1.raspored"));
+            Long sifraRasporeda = rs.getLong("e1.raspored");
+            RasporedEksperimenata raspored = new RasporedEksperimenata(0l);
 
-            if (raspored.getSifra() != null) {
+            if (sifraRasporeda != 0) {
+                raspored.setSifra(sifraRasporeda);
                 raspored.setDatumOd(rs.getDate("r.DatumOd"));
                 raspored.setDatumDo(rs.getDate("r.DatumDo"));
             }
@@ -46,7 +48,9 @@ public class Konverter {
             e.setDatumOdrzavanja(rs.getDate("e1.datumOdrzavanja"));
             e.setBodovi(rs.getInt("e1.bodovi"));
             e.setEksperimenatator(ekperimentator);
-            e.setRaspored(raspored);
+            if (sifraRasporeda != 0) {
+                e.setRaspored(raspored);
+            }
 
             return e;
         } else if (entity instanceof Eksperimentator) {
@@ -61,8 +65,8 @@ public class Konverter {
             p.setNaziv(rs.getString("naziv"));
             p.setUslov(rs.getInt("uslov"));
             return p;
-        } else if(entity instanceof SE){
-            
+        } else if (entity instanceof SE) {
+
             Student s = new Student();
 
             s.setSifra(rs.getLong("s.sifra"));
@@ -72,7 +76,6 @@ public class Konverter {
             s.setPolozio(rs.getInt("s.polozio") == 1);
             s.setPredmet(new Predmet(rs.getLong("s.predmet")));
 
-            
             Eksperiment e = new Eksperiment();
 
             e.setSifra(rs.getLong("e1.sifra"));
@@ -81,17 +84,16 @@ public class Konverter {
             e.setBodovi(rs.getInt("uk_bodova"));
             e.setEksperimenatator(null);
             e.setRaspored(null);
-            
-            
+
             SE ucesce = new SE(s, e);
-            
+
             return ucesce;
-        } else if (entity instanceof RasporedEksperimenata){
+        } else if (entity instanceof RasporedEksperimenata) {
             RasporedEksperimenata rasporedEksperimenata = new RasporedEksperimenata(rs.getLong("r.sifra"));
-            
+
             rasporedEksperimenata.setDatumOd(rs.getDate("r.datumOd"));
             rasporedEksperimenata.setDatumDo(rs.getDate("r.datumDo"));
-            
+
             return rasporedEksperimenata;
         }
 
