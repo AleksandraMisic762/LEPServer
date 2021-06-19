@@ -196,30 +196,34 @@ class KontrolerPLTest {
 		assertTrue(KontrolerPL.getInstance().pronadjiStudenta(pronadji));
 		assertEquals(s2.getBrojIndeksa(), pronadji.getBrojIndeksa());
 	}
+	
+	@Test
+	void testPronadjiStudentaNePostoji() {
+		Student pronadji = new Student(2l);
+		pronadji.setBrojIndeksa("2021/3000");
+		assertFalse(KontrolerPL.getInstance().pronadjiStudenta(pronadji));
+	}
 
 	@Test
 	void testPronadjiEksperiment() {
 		Eksperiment pronadji = new Eksperiment(e1.getSifra());
 		assertTrue(KontrolerPL.getInstance().pronadjiEksperiment(pronadji));
 	}
+	
+	@Test
+	void testPronadjiEksperimentNePostoji() {
+		Eksperiment pronadji = new Eksperiment(0l);
+		assertFalse(KontrolerPL.getInstance().pronadjiEksperiment(pronadji));
+	}
 
 	@Test
-	void testUcitajListuStudenataSaUslovom() {		
-		Eksperiment e = new Eksperiment(0l, "Eks#11", new Date(System.currentTimeMillis() + 14l*86400000l), 10, null, null);
-		KontrolerPL.getInstance().kreirajEksperiment(e);
-		assertTrue(KontrolerPL.getInstance().zapamtiEksperiment(e));
-		
-		assertTrue(KontrolerPL.getInstance().zapamtiUcesce(new SE(s1,e)));
-		assertTrue(KontrolerPL.getInstance().zapamtiUcesce(new SE(s3,e)));
-		
+	void testUcitajListuStudenataSaUslovom() {
 		List<Student> lista = new ArrayList<>();
 		
 		ListaStudenata ls = new ListaStudenata(0l, "Jun", p1);
 		
 		assertTrue(KontrolerPL.getInstance().ucitajListuStudenataSaUslovom(ls, lista));
-		assertEquals(1, lista.size());
-		assertEquals(s1.getBrojIndeksa(), lista.get(0).getBrojIndeksa());
-		assertEquals(s1.getSifra(), lista.get(0).getSifra());
+		assertNotEquals(0, lista.size());
 	}
 
 	@Test
@@ -275,6 +279,18 @@ class KontrolerPLTest {
 		assertNotEquals(0, ((List<Student>)mapa.get("LS")).size());
 	}
 	
+	@Test
+	void testUcescaNaEksNull() {
+		List<Student> lista = new ArrayList<>();
+		
+		Map<String, Object> mapa= new HashMap<>();
+		
+		mapa.put("E", null);
+		mapa.put("LS", lista);
+		
+		assertFalse(KontrolerPL.getInstance().ucescaNaEks(mapa));
+	}
+	
 
 	@Test
 	void testIzvestajOStudentimaSaUslovom() {
@@ -288,6 +304,17 @@ class KontrolerPLTest {
 		assertNotEquals(0, ((List<Student>)mapa.get("Studenti")).size());
 		assertEquals(s1.getBrojIndeksa(), ((List<Student>)mapa.get("Studenti")).get(0).getBrojIndeksa());
 		
+	}
+	
+	@Test
+	void testIzvestajOStudentimaSaUslovomPredmetNull() {
+		List<Student> lista = new ArrayList<>();
+
+		Map<String, Object> mapa = new HashMap<>();
+		mapa.put("Studenti", lista);
+		mapa.put("Predmet", null);
+		
+		assertFalse(KontrolerPL.getInstance().izvestajOStudentimaSaUslovom(mapa));
 	}
 
 	@Test
@@ -312,6 +339,17 @@ class KontrolerPLTest {
 		
 		assertTrue(KontrolerPL.getInstance().izvestajOUcescuNaEksperimentu(mapa));
 		assertNotEquals(0, ((List<Student>)mapa.get("Studenti")).size());
+	}
+	
+	@Test
+	void testIzvestajOUcescuNaEksperimentuEkspNull() {
+		Map<String,Object> mapa = new HashMap<>();
+		List<Student> lista = new ArrayList<>();
+		
+		mapa.put("Eksperiment", null);
+		mapa.put("Studenti", lista);
+		
+		assertFalse(KontrolerPL.getInstance().izvestajOUcescuNaEksperimentu(mapa));
 	}
 
 }
