@@ -120,7 +120,7 @@ public class RepositoryDBOpsta implements DBRepository<OpstiDomenskiObjekat> {
             if (entity instanceof SE) {
                 query = "SELECT s.sifra, s.brojIndeksa, s.ime, s.prezime, s.polozio, s.predmet, e1.sifra, e1.naziv, e1.datumOdrzavanja FROM SE join student s on (s.sifra = SE.student) JOIN eksperiment e1 on (e1.sifra = eksperiment)";
             }
-            System.out.println(query);
+            
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             List<OpstiDomenskiObjekat> result = new ArrayList<>();
@@ -181,53 +181,4 @@ public class RepositoryDBOpsta implements DBRepository<OpstiDomenskiObjekat> {
             throw ex;
         }
     }
-
-//    public void addListaStudenata(ListaStudenata listaS, List<Student> studenti) throws Exception {
-//        try {
-//            Connection connection = DBConnectionFactory.getInstance().getConnection();
-//            String query = listaS.vratiUpitZaInsert();
-//            PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-//
-//            statement.executeUpdate();
-//            ResultSet rsKey = statement.getGeneratedKeys();
-//
-//            if (rsKey.next()) {
-//                Long id = rsKey.getLong(1);
-//                listaS.setSifra(id);
-//                for (Student item : studenti) {
-//                    LSS lss = new LSS(item, listaS);
-//
-//                    String sql = lss.vratiUpitZaInsert();
-//
-//                    statement = connection.prepareStatement(sql);
-//
-//                    statement.executeUpdate();
-//                    
-//                    item.setPolozio(true);
-//                    
-//                    StringBuilder sb = new StringBuilder();
-//                    sb.append("UPDATE ")
-//                            .append(item.vratiNazivTabele()).append(" SET ");
-//
-//                    sb.append(item.vratiVrednostiZaUpdate());
-//
-//                    sb.append(" WHERE sifra = ").append(item.getSifra());
-//
-//                    sql = sb.toString();
-//                    
-//                    
-//                    statement = connection.prepareStatement(sql);
-//
-//                    statement.executeUpdate();
-//                }
-//            } else {
-//                throw new Exception("ListaStudenata id is not generated!");
-//            }
-//            rsKey.close();
-//            statement.close();
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//            throw ex;
-//        }
-//    }
 }
