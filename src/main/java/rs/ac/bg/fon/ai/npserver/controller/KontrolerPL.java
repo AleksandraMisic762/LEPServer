@@ -20,7 +20,7 @@ import java.util.Map;
  * Klasa koja sadrži poslovni logiku i kontroliše pozive sistemskih operacija.
  * Sadrži refencu na klasu preko koje se komunicira sa skladištem podataka.
  * 
- * <b>KontrolerPL</b> je Singleton.
+ * <b>KontrolerPL</b> je Singleton patern.
  */
 public class KontrolerPL {
 
@@ -245,9 +245,10 @@ public class KontrolerPL {
 	 * 
 	 * @param ekperiment
 	 *            Objekat klase <b>Eksperiment</b> preko koga se prosleđuje vrednost
-	 *            preko koje se pronalazi rekord studenta koji se ažurira i vraća
-	 *            povratna vrednost sistemske operacije <b>ZapamtiEksperiment</b>.
-	 * @return <b>true</b> ako je operacija izvršena bez nastanka izuzetakai
+	 *            preko koje se pronalazi rekord eksperimenta koji se ažurira i
+	 *            vraća povratna vrednost sistemske operacije
+	 *            <b>ZapamtiEksperiment</b>.
+	 * @return <b>true</b> ako je operacija izvršena bez nastanka izuzetaka i
 	 *         eksperiment je uspešno ažuriran ili <b>false</b> ako je došlo do
 	 *         izuzetka ili eksperiment ne može da se ažurira na neku od ili sve
 	 *         prosleđene vrednosti.
@@ -430,8 +431,8 @@ public class KontrolerPL {
 	 *            Parametar preko koga se vraćaju svi eksperimenti koji su u datom
 	 *            rasporedu, tipa <b>java.util.List</b>
 	 * @return <b>true</b> ako je operacija izvršena bez nastanka izuzetaka i
-	 *         uspešno je sačuvan raspored i ažurirani svih eksepimeti tom rasporedu
-	 *         ili <b>false</b> ako je došlo do izuzetka.
+	 *         uspešno je sačuvan raspored i ažurirani svih eksperimenti tom
+	 *         rasporedu ili <b>false</b> ako je došlo do izuzetka.
 	 */
 	public boolean zapamtiRasporedEksperimenata(RasporedEksperimenata raspored, List<Eksperiment> listaEksperimenata) {
 		try {
@@ -469,7 +470,7 @@ public class KontrolerPL {
 
 	/**
 	 * Poziva sistemsku operaciju <b>UcescaNaEks</b> koja vraća sve studente koji su
-	 * učestvovali na ekseprimentu koji se prosleđuje metodi.
+	 * učestvovali na eksperimentu koji se prosleđuje metodi.
 	 * 
 	 * @param m
 	 *            Parametar preko koga se vraća lista svih studenata koji su
