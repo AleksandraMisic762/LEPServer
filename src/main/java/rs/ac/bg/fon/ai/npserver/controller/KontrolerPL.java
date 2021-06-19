@@ -241,7 +241,6 @@ public class KontrolerPL {
         }
     }
     
-    //generise Json izvestaj o studentima koji imaju uslov za polaganje ispita
     public boolean izvestajOStudentimaSaUslovom(Map mapa) {
     	try {
             OpstaSO operation = new IzvestajStudentiUslovom();
@@ -253,7 +252,6 @@ public class KontrolerPL {
         }
     }
     
-    //generise Json izvestaj o ekpserimentima koji su se vec sproveli u laboratoriji
     public boolean izvestajOSprovedenimEksperimentima(List<Eksperiment> lista) {
     	try {
             OpstaSO operation = new IzvestajOSprovedenimEksperimentima();
@@ -265,7 +263,6 @@ public class KontrolerPL {
         }
     }
     
-    //generise Json izvestaj o studentima koji su ucestvovali u nekom eksperimentu
     public boolean izvestajOUcescuNaEksperimentu(Map mapa) {
     	try {
             OpstaSO operation = new IzvestajStudentiNaEksperimentu();
