@@ -559,5 +559,4 @@ public class KontrolerPL {
 			return false;
 		}
 	}
-
 }
