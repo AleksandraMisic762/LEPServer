@@ -1,7 +1,6 @@
 package rs.ac.bg.fon.ai.npserver.operation.impl.ucitajSve;
 
 import rs.ac.bg.fon.ai.npcommon.domain.Eksperiment;
-import rs.ac.bg.fon.ai.npcommon.domain.ListaStudenata;
 import rs.ac.bg.fon.ai.npcommon.domain.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.ai.npcommon.domain.SE;
 import rs.ac.bg.fon.ai.npcommon.domain.Student;
@@ -31,7 +30,6 @@ public class UcescaNaEks extends OpstaSO {
 
     @Override
     protected void izvrsi(Object param) throws Exception {
-        List<SE> ucesca = new ArrayList<>();
 
         List<OpstiDomenskiObjekat> odoL = ((RepositoryDBOpsta) repository).getAll(new SE());
         for(OpstiDomenskiObjekat odo : odoL){
@@ -41,8 +39,6 @@ public class UcescaNaEks extends OpstaSO {
             if(Objects.equals(se.getEksperiment().getSifra(), ((Eksperiment)param).getSifra())){
                 studenti.add(se.getStudent());
             }
-                
-            
         }
     }
 
