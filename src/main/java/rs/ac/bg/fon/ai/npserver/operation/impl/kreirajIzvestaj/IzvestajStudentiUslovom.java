@@ -32,7 +32,7 @@ public class IzvestajStudentiUslovom extends OpstaSO {
         Predmet predmet = (Predmet) mapa.get("Predmet");
 
         List<OpstiDomenskiObjekat> odoL = ((RepositoryDBOpsta) repository).getWhere(new SE(),
-                " HAVING e.predmet = " + predmet.getSifra()
+                " HAVING s.predmet = " + predmet.getSifra()
                 + " AND s.polozio = " + 0);
         for (OpstiDomenskiObjekat odo : odoL) {
 
