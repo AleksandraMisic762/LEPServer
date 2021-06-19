@@ -48,8 +48,8 @@ public class ZapamtiRasporedEksperimenata  extends OpstaSO {
         for(OpstiDomenskiObjekat e : listE){
             Eksperiment ek = (Eksperiment)e;
             ek.setRaspored(re);
-            eksperiment.add(ek);
             repository.edit(ek);
+            eksperiment.add(ek);
         }
     }
 
