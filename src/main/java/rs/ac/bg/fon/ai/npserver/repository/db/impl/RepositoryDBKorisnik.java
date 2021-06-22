@@ -25,7 +25,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
                     .append(" (").append(korisnik.vratiImenaKolonaBezSife()).append(")")
                     .append(" VALUES (").append(korisnik.vratiVrednostiBezSifre()).append(")");
             String query = korisnik.vratiUpitZaInsert();
-            System.out.println(query);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet rsKey = statement.getGeneratedKeys();
@@ -55,7 +54,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
             sb.append(" WHERE sifra = ").append(korisnik.getSifra());
 
             String query = sb.toString();
-            System.out.println(query);
             PreparedStatement statement = connection.prepareStatement(query);
 
             statement.executeUpdate();
@@ -74,7 +72,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
             StringBuilder sb = new StringBuilder();
             sb.append("DELETE FROM ").append(korisnik.vratiNazivTabele().split(" ")[0]).append(" WHERE sifra = ").append(korisnik.getSifra());
             String query = sb.toString();
-            System.out.println(query);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
             statement.close();
@@ -96,7 +93,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
             }
             sb.append(korisnik.vratiUslovZaSelect());
             String query = sb.toString();
-            System.out.println(query);
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             Korisnik result = null;
@@ -122,7 +118,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
                 sb.append(korisnik.vratiJoinKlauzulu());
             }
             String query = sb.toString();
-            System.out.println(query);
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             List<Korisnik> listaKorisnik = new ArrayList<>();
@@ -150,7 +145,6 @@ public class RepositoryDBKorisnik implements DBRepository<Korisnik> {
             }
             sb.append(where);
             String query = sb.toString();
-            System.out.println(query);
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             List<Korisnik> list = new ArrayList<>();
